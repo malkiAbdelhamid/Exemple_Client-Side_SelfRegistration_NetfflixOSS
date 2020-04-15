@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<table border="1">
+    <tr>
+        <th> ID</th>
+        <th> Nom</th>
+        <th> Durée</th>
+    </tr>
+
+    <tr th:if="${formations.empty}">
+        <td> No Formations Available </td>
+    </tr>
+
+    <tr th:each="f:${formations}">
+        <td> <span th:text="${f.idFormation}"></span></td>
+        <td> <span th:text="${f.nom}"></span></td>
+        <td> <span th:text="${f.duree}"></span></td>
+
+    </tr>
+</table>
+
+</body>
+</html>
